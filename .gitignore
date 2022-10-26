@@ -1,0 +1,6 @@
+.idea/
+*.iml
+src
+pkg
+*.pkg.tar.*
+teledatics-cli-app-git
