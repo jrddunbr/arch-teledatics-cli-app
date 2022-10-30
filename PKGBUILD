@@ -9,11 +9,6 @@ depends=('base')
 source=("${srcdir}/${pkgname}::git+https://github.com/teledatics/nrc7292_sw_pkg")
 sha256sums=('SKIP')
 
-# Remove this entire section after https://github.com/teledatics/nrc7292_sw_pkg/pull/1 is merged
-prepare() {
-    sed -i -e '30s/$/ lib$(TARGET).a/' "${srcdir}/${pkgname}/package/host/src/cli_app/Makefile"
-}
-
 build() {
     cd "${srcdir}/${pkgname}/package/host/src/cli_app"
     make
